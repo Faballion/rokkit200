@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { AvailabilityData } from './models/availability-data.model';
 
 @Injectable({
     providedIn: 'root'
@@ -10,7 +11,7 @@ export class AvailabilityService {
 
     constructor(private http: HttpClient) {}
 
-    getAvailabilityData(): Observable<any[]> {
-        return this.http.get<any[]>(this.mockDataUrl);
+    getAvailabilityData(): Observable<AvailabilityData[]> {
+        return this.http.get<AvailabilityData[]>(this.mockDataUrl);
     }
 }
